@@ -4,7 +4,7 @@ import Link from 'next/link';
 export function Footer() {
   return (
     <footer className="bg-black text-white py-20 px-6 md:px-12 border-t border-white/10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
         <div className="col-span-1 md:col-span-1">
           <div className="flex items-center gap-2 font-semibold text-xl tracking-tight mb-6">
             <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
@@ -23,7 +23,7 @@ export function Footer() {
           
         </div>
 
-        <div className='text-right'>
+        <div>
           <h3 className="font-semibold mb-6 text-white">Product</h3>
           <ul className="space-y-3 text-sm text-neutral-400">
             <li><Link href="/#mechanics" className="hover:text-white transition-colors">Mechanics</Link></li>
@@ -33,17 +33,7 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* <div>
-          <h3 className="font-semibold mb-6 text-white">Company</h3>
-          <ul className="space-y-3 text-sm text-neutral-400">
-            <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-          </ul>
-        </div> */}
-
-        <div className='text-right'>
+        <div>
           <h3 className="font-semibold mb-6 text-white">Legal</h3>
           <ul className="space-y-3 text-sm text-neutral-400">
             <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>

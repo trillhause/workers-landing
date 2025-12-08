@@ -108,7 +108,7 @@ export function Hero() {
           </p>
 
           <form onSubmit={handleSubmit} className="w-full max-w-md" noValidate>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row items-center gap-2">
               <input
                 type="email"
                 placeholder="Enter your work email"
@@ -121,7 +121,7 @@ export function Hero() {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-3 text-sm font-medium bg-neutral-100 text-black hover:bg-neutral-300 transition-colors whitespace-nowrap rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto px-6 py-3 text-sm font-medium bg-neutral-100 text-black hover:bg-neutral-300 transition-colors whitespace-nowrap rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? 'Submitting...' : 'Get Access'}
               </button>
