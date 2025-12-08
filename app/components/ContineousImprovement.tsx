@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 export function ContineousImprovement() {
-  const [activeStep, setActiveStep] = useState<string | null>(null);
+  const [activeStep, setActiveStep] = useState<string>("Reports");
 
   return (
     <section id="optimization" className="py-24 bg-black">
@@ -15,12 +15,11 @@ export function ContineousImprovement() {
           </div>
           <div 
             className="bg-zinc-900/30 border border-zinc-800 rounded-md overflow-hidden"
-            onMouseLeave={() => setActiveStep(null)}
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               <div className="lg:col-span-8 relative min-h-[800px] lg:min-h-[600px] order-2 lg:order-1">
                 <Image
-                  src="/images/trillhouse_robot_repairing_itself_--ar_169_--raw_--profile_of_4d47df71-250a-4a87-828e-6b4572cf136c_1.png"
+                  src="/images/optimization.png"
                   alt="Continuous Improvement"
                   fill
                   className="object-cover"

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 export function AgentMechanics() {
-  const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
+  const [activeAccordion, setActiveAccordion] = useState<string>('Monitor');
 
   return (
     <section id="mechanics" className="py-24 bg-black">
@@ -15,7 +15,7 @@ export function AgentMechanics() {
               </div>
           <div 
             className="bg-zinc-900/30 border border-zinc-800 rounded-md overflow-hidden"
-            onMouseLeave={() => setActiveAccordion(null)}
+            // onMouseLeave={() => setActiveAccordion(null)}
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               <div className="lg:col-span-4 flex flex-col justify-between h-full min-h-[700px]">
@@ -71,11 +71,11 @@ export function AgentMechanics() {
                   
                 <div className="lg:col-span-8 relative min-h-[800px] lg:min-h-[600px]">
                 <Image
-                                  src="/images/u2719761642_consciousness_potential_style_warm_tones_and_ligh_5bb84730-23b9-40e6-9096-8b952a8e29c3_3.png"
-                                  alt="Smart Insights"
-                                  fill
-                                  className="object-cover"
-                                />
+                  src="/images/mechanics.png"
+                  alt="Smart Insights"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-zinc-900/50" />
                 
                 {/* Overlay UI Mockup */}

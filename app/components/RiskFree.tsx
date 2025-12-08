@@ -22,12 +22,47 @@ Before handing over the keys, run your agents in Simulation Mode. Watch how they
               </div>
               <div className="lg:col-span-8 relative min-h-[400px] lg:min-h-[600px]">
                 <Image
-                  src="/images/u2719761642_soulfull_--ar_169_--profile_bgltxuf_--v_7_6d76eff8-3950-44a0-8154-1ce15f87b674_1.png"
+                  src="/images/experimentation.png"
                   alt="Voice Experience"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-zinc-900/50" />
+                
+                {/* Overlay UI Mockup */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-full max-w-md mx-6 bg-zinc-900/90 backdrop-blur-xl border border-zinc-700 rounded-xl p-6 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-700 pointer-events-auto">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-400">
+                          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <div className="font-medium text-sm">Simulation Mode</div>
+                          <div className="text-[10px] text-zinc-400">Safe experimentation environment</div>
+                        </div>
+                      </div>
+                      <span className="text-[10px] bg-orange-500/10 text-orange-400 border border-orange-500/20 px-2 py-1 rounded">Active</span>
+                    </div>
+
+                    <div className="space-y-2 font-mono text-[10px]">
+                        <div className="p-2 bg-zinc-950/50 rounded border border-zinc-800/50 text-zinc-500">
+                          <span className="text-blue-400">INCOMING:</span> "Update the production database schema."
+                        </div>
+                        <div className="p-2 bg-zinc-800/30 rounded border border-zinc-700/50 text-zinc-300">
+                          <span className="text-orange-400">ANALYSIS:</span> Detected high-risk keyword "production".
+                        </div>
+                        <div className="p-2 bg-zinc-800/30 rounded border border-zinc-700/50 text-zinc-300">
+                          <span className="text-orange-400">ACTION:</span> <span className="line-through opacity-50">Execute SQL Query</span>
+                        </div>
+                        <div className="p-2 bg-red-500/10 rounded border border-red-500/20 text-red-300">
+                          <span className="text-red-400">SAFETY:</span> Action intercepted. Requires manual approval in Simulation Mode.
+                        </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ export function FinalCTA() {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/trillhouse_1984_apple_macintosh_in_a_field_of_flowers_--ar_16_34a33d3d-a1ae-4732-a100-b2b3791adbc7_0.png"
+              src="/images/final-cta.png"
               alt="Field of flowers with Macintosh"
               fill
               className="object-cover"

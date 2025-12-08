@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 export function Onboarding() {
-  const [activeGoLiveStep, setActiveGoLiveStep] = useState<string | null>(null);
+  const [activeGoLiveStep, setActiveGoLiveStep] = useState<string>("Step 1");
 
   return (
     <section id="onboarding" className="py-24 bg-black">
@@ -15,16 +15,15 @@ export function Onboarding() {
           </div>
           <div 
             className="bg-zinc-900/30 border border-zinc-800 rounded-md overflow-hidden"
-            onMouseLeave={() => setActiveGoLiveStep(null)}
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               <div className="lg:col-span-8 relative min-h-[700px] order-2 lg:order-1">
                 <Image
-                                  src="/images/u2719761642_human_in_flow_state_style_warm_light_grainy_blurr_2db316b6-8177-4958-a366-84ef32889829_0.png"
-                                  alt="Agent Canvas"
-                                  fill
-                                  className="object-cover"
-                                />
+                  src="/images/onboarding.png"
+                  alt="Agent Canvas"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-zinc-900/80" />
                 
                 {/* Dynamic Overlay UI */}
