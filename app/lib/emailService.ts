@@ -17,11 +17,14 @@ export async function sendConfirmationEmail({
     const confirmationLink = `${baseUrl}/api/confirm?token=${confirmationToken}`;
 
     const { data, error } = await resend.emails.send({
-      from: 'Millin @ Workers <founders@slackworkers.com>', // Replace with your verified domain in production
+      from: 'Millin @ Workers <millin@slackworkers.com>', // Replace with your verified domain in production
       to: [email],
-      subject: 'Please confirm your email',
-      html: confirmationEmailTemplate(confirmationLink),
-      text: confirmationEmailText(confirmationLink),
+      template: {
+        id: 'confirmation-email',
+        variables: {
+          confirmationLink: confirmationLink,
+        },
+      },
     });
 
     if (error) {
