@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Slack Agents",
-  description: "Let's agents handle distractions. Get your time back. Enter Flow State.",
+  description: "Let agents handle your distractions. Get your time back. Enter Flow State.",
   openGraph: {
     title: 'Autonomous Agents in Slack',
-    description: 'Eliminate all your distractions and get your time back.',
+    description: 'Let agents handle your distractions. Get your time back. Enter Flow State.',
     url: 'https://slackworkers.com', // Replace with your actual URL
     siteName: 'Slack Workers',
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Autonomous Agents in Slack',
-    description: 'Eliminate all your distractions and get your time back.',
+    description: 'Let agents handle your distractions. Get your time back. Enter Flow State.',
     images: ['/images/og-image.png'], // Must be an absolute URL in production
   },
 };
