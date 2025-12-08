@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export function Footer() {
   return (
@@ -25,10 +26,10 @@ export function Footer() {
         <div className='text-right'>
           <h3 className="font-semibold mb-6 text-white">Product</h3>
           <ul className="space-y-3 text-sm text-neutral-400">
-            <li><a href="#mechanics" className="hover:text-white transition-colors">Mechanics</a></li>
-            <li><a href="#onboarding" className="hover:text-white transition-colors">Onboarding</a></li>
-            <li><a href="#testing" className="hover:text-white transition-colors">Testing</a></li>
-            <li><a href="#optimization" className="hover:text-white transition-colors">Optimization</a></li>
+            <li><Link href="/#mechanics" className="hover:text-white transition-colors">Mechanics</Link></li>
+            <li><Link href="/#onboarding" className="hover:text-white transition-colors">Onboarding</Link></li>
+            <li><Link href="/#testing" className="hover:text-white transition-colors">Testing</Link></li>
+            <li><Link href="/#optimization" className="hover:text-white transition-colors">Optimization</Link></li>
           </ul>
         </div>
 
@@ -45,8 +46,8 @@ export function Footer() {
         <div className='text-right'>
           <h3 className="font-semibold mb-6 text-white">Legal</h3>
           <ul className="space-y-3 text-sm text-neutral-400">
-            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+            <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+            <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
             {/* <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li> */}
           </ul>
         </div>
