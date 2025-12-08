@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     // Validate email format
     if (!email || !isValidEmail(email)) {
       return NextResponse.json<WaitlistResponse>(
-        { success: false, error: 'Invalid email format.' },
+        { success: false, error: 'Please enter a valid email address.' },
         { status: 400 }
       );
     }
@@ -136,7 +136,7 @@ export async function POST(req: NextRequest) {
           {
             success: true,
             message:
-              'Email saved, but we had trouble sending the confirmation. We\'ll reach out soon.',
+              'We had trouble sending confirmation email. We\'ll reach out soon.',
           },
           { status: 200 }
         );

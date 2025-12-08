@@ -16,6 +16,21 @@ export function FinalCTA() {
     setLoading(true);
     setMessage('');
 
+    // Basic frontend validation
+    if (!email) {
+      setMessageType('warning');
+      setMessage('Please enter your email address.');
+      setLoading(false);
+      return;
+    }
+
+    if (!email.includes('@')) {
+      setMessageType('error');
+      setMessage(`Please enter a valid email address.`);
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await fetch('/api/waitlist', {
         method: 'POST',
@@ -76,7 +91,7 @@ export function FinalCTA() {
               <h2 className="text-5xl font-serif font-medium md:text-6xl">Enter Flow State.</h2>
             </div>
 
-            <form onSubmit={handleSubmit} className="w-full max-w-md">
+            <form onSubmit={handleSubmit} className="w-full max-w-md" noValidate>
               <div className="flex flex-col sm:flex-row items-center gap-2">
                 <input
                   type="email"

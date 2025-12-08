@@ -23,7 +23,7 @@ const PERSONAL_EMAIL_DOMAINS = [
 ];
 
 // Zod schema for email validation
-export const emailSchema = z.string().email('Invalid email format');
+export const emailSchema = z.string().email('Please enter a valid email address.');
 
 /**
  * Validates if the email has a valid format

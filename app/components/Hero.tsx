@@ -37,6 +37,21 @@ export function Hero() {
     setLoading(true);
     setMessage('');
 
+    // Basic frontend validation
+    if (!email) {
+      setMessageType('warning');
+      setMessage('Please enter your email address.');
+      setLoading(false);
+      return;
+    }
+
+    if (!email.includes('@')) {
+      setMessageType('error');
+      setMessage(`Please enter a valid email address.`);
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await fetch('/api/waitlist', {
         method: 'POST',
@@ -92,7 +107,7 @@ export function Hero() {
             AI that monitors high volume slack channels and takes actions. Built for growing teams.
           </p>
 
-          <form onSubmit={handleSubmit} className="w-full max-w-md">
+          <form onSubmit={handleSubmit} className="w-full max-w-md" noValidate>
             <div className="flex items-center gap-2">
               <input
                 type="email"
