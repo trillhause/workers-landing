@@ -2,6 +2,7 @@
 
 import React from 'react';
 import type { WaitlistResponse } from '@/app/types/waitlist';
+import { LetterUnread, DangerTriangle } from '@solar-icons/react';
 
 export function Hero() {
   const [email, setEmail] = React.useState('');
@@ -113,14 +114,16 @@ export function Hero() {
 
             {message && (
               <div
-                className={`mt-3 px-4 py-2 rounded-sm text-sm ${
+                className={`mt-3 px-4 py-2 rounded-sm text-sm flex items-center gap-2 ${
                   messageType === 'success'
-                    ? 'bg-green-500/10 text-green-400 border border-green-500/20'
+                    ? 'bg-green-500/10 text-green-400 py-3 border-green-500/20 backdrop-blur-sm'
                     : messageType === 'warning'
-                    ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20'
-                    : 'bg-red-500/10 text-red-400 border border-red-500/20'
+                    ? 'bg-yellow-500/10 text-yellow-400 py-3 border-yellow-500/20 backdrop-blur-sm'
+                    : 'bg-red-500/10 text-red-400 py-3 border-red-500/20 border backdrop-blur-sm'
                 }`}
               >
+                {messageType === 'success' && <LetterUnread className="w-4 h-4" weight="Bold"/>}
+                {messageType !== 'success' && <DangerTriangle className="w-4 h-4" weight="Bold"/>}
                 {message}
               </div>
             )}
