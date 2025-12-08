@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json<WaitlistResponse>(
           {
             success: true,
-            message: 'Please use your work email address to join the waitlist.',
+            message: 'Please use your work email address to get access.',
             requiresWorkEmail: true,
           },
           { status: 200 }
@@ -154,7 +154,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json<WaitlistResponse>(
         {
           success: true,
-          message: 'Please use your work email address to join the waitlist.',
+          message: 'Please use your work email address to get access',
           requiresWorkEmail: true,
         },
         { status: 200 }
