@@ -1,6 +1,14 @@
+'use client';
+
 import React from 'react';
+import type { WaitlistResponse } from '@/app/types/waitlist';
 
 export function Hero() {
+  const [email, setEmail] = React.useState('');
+  const [loading, setLoading] = React.useState(false);
+  const [message, setMessage] = React.useState('');
+  const [messageType, setMessageType] = React.useState<'success' | 'error' | 'warning'>('success');
+
   React.useEffect(() => {
     const loadUnicornScript = () => {
       if (!(window as any).UnicornStudio) {
@@ -23,6 +31,46 @@ export function Hero() {
     loadUnicornScript();
   }, []);
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data: WaitlistResponse = await response.json();
+
+      if (data.success) {
+        if (data.requiresWorkEmail) {
+          setMessageType('warning');
+          setMessage(data.message || 'Please use your work email address.');
+        } else if (data.alreadyExists) {
+          setMessageType('success');
+          setMessage(data.message || "You're already on our waitlist!");
+        } else {
+          setMessageType('success');
+          setMessage(data.message || 'Check your email for a confirmation link!');
+          setEmail(''); // Clear input on success
+        }
+      } else {
+        setMessageType('error');
+        setMessage(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setMessageType('error');
+      setMessage('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="relative h-screen max-h-[1000px] min-h-[500px] flex flex-col items-center justify-center overflow-hidden">
         <div 
@@ -43,16 +91,39 @@ export function Hero() {
             AI that monitors high volume slack channels and takes actions. Built for growing teams.
           </p>
 
-          <form className="flex items-center gap-2 w-full max-w-md">
-            <input 
-                type="email" 
-                placeholder="Enter your work email" 
-                className="w-full sm:flex-1 bg-white/10  border-white/20 px-6 py-3 text-sm text-white placeholder:text-zinc-300 focus:outline-none focus:border-white/40 transition-colors backdrop-blur-sm rounded-sm"
+          <form onSubmit={handleSubmit} className="w-full max-w-md">
+            <div className="flex items-center gap-2">
+              <input
+                type="email"
+                placeholder="Enter your work email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={loading}
+                required
+                className="w-full sm:flex-1 bg-white/10 border-white/20 px-6 py-3 text-sm text-white placeholder:text-zinc-300 focus:outline-none focus:border-white/40 transition-colors backdrop-blur-sm rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
               />
-            <button className="px-6 py-3 text-sm font-medium bg-neutral-100 text-black hover:bg-neutral-300 transition-colors whitespace-nowrap rounded-sm">
-              Get Access
-            </button>
+              <button
+                type="submit"
+                disabled={loading}
+                className="px-6 py-3 text-sm font-medium bg-neutral-100 text-black hover:bg-neutral-300 transition-colors whitespace-nowrap rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {loading ? 'Submitting...' : 'Get Access'}
+              </button>
+            </div>
 
+            {message && (
+              <div
+                className={`mt-3 px-4 py-2 rounded-sm text-sm ${
+                  messageType === 'success'
+                    ? 'bg-green-500/10 text-green-400 border border-green-500/20'
+                    : messageType === 'warning'
+                    ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20'
+                    : 'bg-red-500/10 text-red-400 border border-red-500/20'
+                }`}
+              >
+                {message}
+              </div>
+            )}
           </form>
         </div>
       </section>
