@@ -17,6 +17,8 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
+    "@iconify-json/solar": "^1.2.5",
+    "@iconify/react": "^6.0.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -5,53 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Confirm Your Email</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333333; background-color: #f5f5f5;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 40px 20px;">
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #ffffff; background-color: #000000;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #000000; padding: 40px 20px;">
     <tr>
       <td align="center">
-        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
-          <!-- Header -->
+        <table width="800" cellpadding="0" cellspacing="0" style="max-width: 800px; width: 100%;">
+          <!-- Header (Logo) -->
           <tr>
-            <td style="padding: 40px 40px 20px; text-align: center;">
-              <h1 style="color: #f97316; margin: 0; font-size: 28px; font-weight: 700;">Confirm Your Email</h1>
+            <td style="padding: 0 0 40px; text-align: center;">
+              <!-- Minimal Logo Reproduction -->
+              <table cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                <tr>
+                   <td style="vertical-align: middle;">
+                      <div style="width: 24px; height: 24px; border-radius: 50%; background-color: rgba(255,255,255,0.1); margin-right: 8px; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #ffffff;"></div>
+                      </div>
+                   </td>
+                   <td style="vertical-align: middle;">
+                      <span style="color: #ffffff; font-weight: 600; font-size: 20px; letter-spacing: -0.5px;">WORKERS</span>
+                   </td>
+                </tr>
+              </table>
             </td>
           </tr>
 
           <!-- Body -->
           <tr>
-            <td style="padding: 0 40px 40px;">
-              <p style="margin: 0 0 24px; font-size: 16px; color: #52525b;">
-                Thanks for joining our waitlist! We're excited to have you on board.
-              </p>
-              <p style="margin: 0 0 32px; font-size: 16px; color: #52525b;">
-                Please confirm your email address by clicking the button below:
+            <td style="padding: 0 20px; text-align: center;">
+              <h1 style="color: #ffffff; margin: 0 0 24px; font-size: 32px; font-weight: 500; letter-spacing: -0.5px;">Confirm your email</h1>
+              
+              <p style="margin: 0 0 32px; font-size: 16px; color: #a1a1aa; max-width: 400px; margin-left: auto; margin-right: auto;">
+                You are in! Click the button below to confirm your address and secure your spot. We'll reach out with onboarding details soon.
               </p>
 
               <!-- CTA Button -->
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td align="center" style="padding: 16px 0;">
-                    <a href="${confirmationLink}" style="display: inline-block; background-color: #f97316; color: #ffffff; padding: 16px 48px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px; transition: background-color 0.2s;">
+                  <td align="center" style="padding: 8px 0 32px;">
+                    <a href="${confirmationLink}" style="display: inline-block; background-color: #ffffff; color: #000000; padding: 14px 32px; text-decoration: none; border-radius: 2px; font-weight: 500; font-size: 14px; letter-spacing: 0.5px;">
                       Confirm Email Address
                     </a>
                   </td>
                 </tr>
               </table>
 
-              <p style="margin: 32px 0 0; font-size: 14px; color: #71717a;">
-                If the button doesn't work, copy and paste this link into your browser:
-              </p>
-              <p style="margin: 8px 0 0; font-size: 14px; color: #f97316; word-break: break-all;">
-                ${confirmationLink}
+              <p style="margin: 32px 0 0; font-size: 12px; color: #52525b;">
+                Or paste this link into your browser:<br>
+                <a href="${confirmationLink}" style="color: #71717a; text-decoration: underline; word-break: break-all;">${confirmationLink}</a>
               </p>
             </td>
           </tr>
 
           <!-- Footer -->
           <tr>
-            <td style="padding: 20px 40px 40px; border-top: 1px solid #e4e4e7;">
-              <p style="margin: 0; font-size: 13px; color: #a1a1aa; line-height: 1.5;">
-                If you didn't request this email, you can safely ignore it. This confirmation link will expire in 7 days.
+            <td style="padding: 60px 20px 40px; text-align: center;">
+              <p style="margin: 0; font-size: 12px; color: #3f3f46;">
+                © 2025 Workers Inc. All rights reserved.<br>
+                If you didn't request this, you can ignore this email.
               </p>
             </td>
           </tr>
