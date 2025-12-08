@@ -85,10 +85,10 @@ export function FinalCTA() {
 
           {/* Content */}
           <div className="relative z-10 container mx-auto px-6 flex flex-col items-center text-center">
-            <div className="mb-8 text-white">
-              <h2 className="text-2xl font-sans ">Get your time back. Let agents handle distractions.</h2>
+            <div className="mb-8">
+              <h2 className="text-2xl text-zinc-300 font-sans ">Get your time back. Let agents handle distractions.</h2>
               <br/>
-              <h2 className="text-5xl font-serif font-medium md:text-6xl">Enter Flow State.</h2>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl text-white font-serif font-medium">Enter Flow State.</h2>
             </div>
 
             <form onSubmit={handleSubmit} className="w-full max-w-md" noValidate>

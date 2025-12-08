@@ -99,11 +99,11 @@ export function Hero() {
             <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-300">Agents Online </span>
           </div> */}
 
-          <h1 className="text-6xl text-center md:text-left md:text-7xl lg:text-7xl font-serif font-medium mb-6 text-left">
+          <h1 className="text-6xl text-center md:text-left md:text-7xl lg:text-7xl font-serif font-medium mb-6">
             Autonomous <br />Agents in Slack
           </h1>
 
-          <p className="text-lg text-center md:text-left md:text-2xl text-gray-300 mb-10 tracking-wide max-w-xl text-left">
+          <p className="text-lg text-center md:text-left md:text-2xl text-gray-300 mb-10 tracking-wide max-w-xl">
             AI that monitors high volume slack channels and takes actions. Built for growing teams.
           </p>
 
