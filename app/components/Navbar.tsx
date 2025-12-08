@@ -4,16 +4,9 @@ export function Navbar() {
   const [scrolled, setScrolled] = React.useState(false);
 
   React.useEffect(() => {
-    // Get reference to the Hero section
-    const heroEl = document.querySelector('section'); // Our Hero is the first (and only) top-level <section>
-    if (!heroEl) return;
-
     function handleScroll() {
-      // Guard for TypeScript: heroEl is scoped outside this handler
-      if (!heroEl) return;
-      const heroBottom = heroEl.getBoundingClientRect().bottom;
-      // If top of window has scrolled past the bottom of the hero
-      if (heroBottom <= 0) {
+      // Add blur background after scrolling down a bit (50px)
+      if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -35,7 +28,13 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 md:px-12 md:py-6 flex items-center justify-between">
-      <div className={`flex items-center gap-8 px-4 py-2 rounded-md transition-colors duration-300 ${navBgClass}`}>
+      <div
+        className={`flex items-center gap-8 px-6 py-3 rounded-md transition-colors duration-300 ${navBgClass}`}
+        style={{ cursor: 'pointer' }}
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+      >
         <div className="flex items-center gap-2 font-semibold text-xl tracking-tight">
           <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
             <div className="w-3 h-3 bg-white rounded-full" />
