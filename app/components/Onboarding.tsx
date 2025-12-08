@@ -168,7 +168,7 @@ export function Onboarding() {
                       id: 'Step 1',
                       time: 'Day 1-2',
                       title: 'Upload & Configure',
-                      description: 'Autogenerate policies for agents by uploading documents and API specs. Fine-tune policies using our builder co-pilot.',
+                      description: 'Autogenerate policies for agents by uploading documents and API specs. Ask Orion (our built-in co-pilot) to fine-tune exisint agent policies.',
                       color: 'bg-cyan-500'
                     },
                     {
