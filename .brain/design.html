@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workers Landing Page - Design System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #ededed;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 3rem 0 1.5rem;
+            color: #ffffff;
+            border-bottom: 1px solid #27272a;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 2rem 0 1rem;
+            color: #fafafa;
+        }
+
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.75rem;
+            color: #f4f4f5;
+        }
+
+        p, li {
+            color: #a1a1aa;
+            margin-bottom: 0.75rem;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        code {
+            background: #18181b;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+            color: #fb923c;
+        }
+
+        pre {
+            background: #18181b;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid #27272a;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: #e4e4e7;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .color-swatch {
+            border: 1px solid #27272a;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .color-box {
+            height: 80px;
+        }
+
+        .color-info {
+            padding: 0.75rem;
+            background: #18181b;
+        }
+
+        .color-name {
+            font-weight: 500;
+            color: #fafafa;
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        .color-value {
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.75rem;
+            color: #71717a;
+        }
+
+        .component-example {
+            background: #000000;
+            border: 1px solid #27272a;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .font-example {
+            padding: 1.5rem;
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid #27272a;
+        }
+
+        th {
+            color: #fafafa;
+            font-weight: 500;
+        }
+
+        td {
+            color: #a1a1aa;
+        }
+
+        .intro {
+            color: #d4d4d8;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Workers Landing Page Design System</h1>
+        <p class="intro">
+            A comprehensive guide to the design aesthetic and patterns used in the Workers landing page.
+            This system features a dark, technical aesthetic with clean typography, subtle animations,
+            and glassmorphism effects optimized for a SaaS/developer tool product.
+        </p>
+
+        <!-- FOUNDATION -->
+        <h2>Foundation</h2>
+
+        <h3>Design Philosophy</h3>
+        <p>
+            The Workers landing page employs a modern, dark technical aesthetic characterized by:
+        </p>
+        <ul>
+            <li><strong>High contrast:</strong> Deep blacks (#000000) paired with bright whites for maximum clarity</li>
+            <li><strong>Neutral CTAs:</strong> Primary call-to-action buttons use neutral/white colors (bg-neutral-100) for clean, professional emphasis</li>
+            <li><strong>Subtle orange accents:</strong> Orange reserved for pulse indicators, section markers, and subtle highlights—NOT for buttons</li>
+            <li><strong>Glassmorphism effects:</strong> Backdrop blur with semi-transparent backgrounds for modern depth</li>
+            <li><strong>Grid patterns and gradients:</strong> Subtle technical backgrounds that add visual interest without distraction</li>
+            <li><strong>Purposeful animations:</strong> Smooth transitions and pulse effects that enhance UX</li>
+            <li><strong>Semantic status colors:</strong> Cyan (monitoring), green (success), yellow (warning), red (error)</li>
+            <li><strong>Typography hierarchy:</strong> Serif for hero impact, sans-serif for UI, monospace for technical labels</li>
+        </ul>
+
+        <h3>Technology Stack</h3>
+        <ul>
+            <li><strong>Framework:</strong> Next.js with React</li>
+            <li><strong>Styling:</strong> Tailwind CSS v4 with <code>@tailwindcss/postcss</code></li>
+            <li><strong>Fonts:</strong> Geist Sans, Geist Mono (Google Fonts)</li>
+            <li><strong>Approach:</strong> Utility-first CSS with inline theme configuration</li>
+        </ul>
+
+        <!-- COLOR PALETTE -->
+        <h2>Color Palette</h2>
+
+        <h3>Base Colors</h3>
+        <div class="color-grid">
+            <div class="color-swatch">
+                <div class="color-box" style="background: #000000;"></div>
+                <div class="color-info">
+                    <div class="color-name">Black (Primary)</div>
+                    <div class="color-value">#000000</div>
+                    <div class="color-value">bg-black</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #ffffff;"></div>
+                <div class="color-info">
+                    <div class="color-name">White</div>
+                    <div class="color-value">#ffffff</div>
+                    <div class="color-value">bg-white / text-white</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #0a0a0a;"></div>
+                <div class="color-info">
+                    <div class="color-name">Background (Dark)</div>
+                    <div class="color-value">#0a0a0a</div>
+                    <div class="color-value">--background</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #ededed;"></div>
+                <div class="color-info">
+                    <div class="color-name">Foreground (Dark)</div>
+                    <div class="color-value">#ededed</div>
+                    <div class="color-value">--foreground</div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Primary Accent Colors (Call-to-Action)</h3>
+        <div class="color-grid">
+            <div class="color-swatch">
+                <div class="color-box" style="background: #f5f5f5;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 100 (Primary CTA)</div>
+                    <div class="color-value">#f5f5f5</div>
+                    <div class="color-value">bg-neutral-100</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #d4d4d4;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 300 (CTA Hover)</div>
+                    <div class="color-value">#d4d4d4</div>
+                    <div class="color-value">bg-neutral-300</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #e5e5e5;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 200 (Alt Hover)</div>
+                    <div class="color-value">#e5e5e5</div>
+                    <div class="color-value">bg-neutral-200</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #a3a3a3;"></div>
+                <div class="color-info">
+                    <div class="color-name">Neutral 400 (Text)</div>
+                    <div class="color-value">#a3a3a3</div>
+                    <div class="color-value">text-neutral-400</div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Secondary Accent (Indicators & Highlights)</h3>
+        <div class="color-grid">
+            <div class="color-swatch">
+                <div class="color-box" style="background: #f97316;"></div>
+                <div class="color-info">
+                    <div class="color-name">Orange 500 (Pulse Indicators)</div>
+                    <div class="color-value">#f97316</div>
+                    <div class="color-value">bg-orange-500 / text-orange-500</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #fb923c;"></div>
+                <div class="color-info">
+                    <div class="color-name">Orange 400</div>
+                    <div class="color-value">#fb923c</div>
+                    <div class="color-value">text-orange-400</div>
+                </div>
+            </div>
+        </div>
+        <p style="color: #a1a1aa; margin-top: 0.5rem; font-size: 0.875rem;">
+            <strong>Note:</strong> Orange is used sparingly for subtle indicators (pulse dots, highlights)
+            and selection states, but NOT for primary call-to-action buttons. The primary CTA color is neutral/white.
+        </p>
+
+        <h3>Neutral Scale (Zinc)</h3>
+        <p>The primary gray scale used throughout the design for backgrounds, borders, and text hierarchy.</p>
+        <div class="color-grid">
+            <div class="color-swatch">
+                <div class="color-box" style="background: #18181b;"></div>
+                <div class="color-info">
+                    <div class="color-name">Zinc 900</div>
+                    <div class="color-value">#18181b</div>
+                    <div class="color-value">bg-zinc-900</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #27272a;"></div>
+                <div class="color-info">
+                    <div class="color-name">Zinc 800</div>
+                    <div class="color-value">#27272a</div>
+                    <div class="color-value">bg-zinc-800 / border-zinc-800</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #3f3f46;"></div>
+                <div class="color-info">
+                    <div class="color-name">Zinc 700</div>
+                    <div class="color-value">#3f3f46</div>
+                    <div class="color-value">bg-zinc-700 / border-zinc-700</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #52525b;"></div>
+                <div class="color-info">
+                    <div class="color-name">Zinc 600</div>
+                    <div class="color-value">#52525b</div>
+                    <div class="color-value">bg-zinc-600</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #71717a;"></div>
+                <div class="color-info">
+                    <div class="color-name">Zinc 500</div>
+                    <div class="color-value">#71717a</div>
+                    <div class="color-value">bg-zinc-500 / text-zinc-500</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #a1a1aa;"></div>
+                <div class="color-info">
+                    <div class="color-name">Zinc 400</div>
+                    <div class="color-value">#a1a1aa</div>
+                    <div class="color-value">text-zinc-400</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #d4d4d8;"></div>
+                <div class="color-info">
+                    <div class="color-name">Zinc 300</div>
+                    <div class="color-value">#d4d4d8</div>
+                    <div class="color-value">text-zinc-300 / placeholder</div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Status & Semantic Colors</h3>
+        <div class="color-grid">
+            <div class="color-swatch">
+                <div class="color-box" style="background: #06b6d4;"></div>
+                <div class="color-info">
+                    <div class="color-name">Cyan 500 - Monitoring</div>
+                    <div class="color-value">#06b6d4</div>
+                    <div class="color-value">bg-cyan-500 / text-cyan-400</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #22c55e;"></div>
+                <div class="color-info">
+                    <div class="color-name">Green 500 - Success</div>
+                    <div class="color-value">#22c55e</div>
+                    <div class="color-value">bg-green-500 / text-green-400</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #eab308;"></div>
+                <div class="color-info">
+                    <div class="color-name">Yellow 500 - Warning</div>
+                    <div class="color-value">#eab308</div>
+                    <div class="color-value">bg-yellow-500 / text-yellow-400</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #ef4444;"></div>
+                <div class="color-info">
+                    <div class="color-name">Red 500 - Error</div>
+                    <div class="color-value">#ef4444</div>
+                    <div class="color-value">bg-red-500 / text-red-400</div>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="color-box" style="background: #10b981;"></div>
+                <div class="color-info">
+                    <div class="color-name">Emerald 500 - Improvement</div>
+                    <div class="color-value">#10b981</div>
+                    <div class="color-value">bg-emerald-500</div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Opacity Patterns</h3>
+        <p>Common opacity values used with background colors for layering and depth:</p>
+        <ul>
+            <li><code>/10</code> - Very subtle backgrounds (10% opacity)</li>
+            <li><code>/20</code> - Subtle hover states and overlays (20% opacity)</li>
+            <li><code>/30</code> - Light overlays (30% opacity)</li>
+            <li><code>/40</code> - Medium backgrounds (40% opacity)</li>
+            <li><code>/50</code> - Half-transparent overlays (50% opacity)</li>
+            <li><code>/90</code> - Nearly opaque modals (90% opacity)</li>
+        </ul>
+        <p>Example: <code>bg-zinc-900/30</code> creates a 30% transparent zinc-900 background.</p>
+
+        <!-- TYPOGRAPHY -->
+        <h2>Typography</h2>
+
+        <h3>Font Families</h3>
+
+        <h4>1. Geist Sans (Primary)</h4>
+        <div class="font-example" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+            <p style="color: #fafafa; margin: 0;">
+                The quick brown fox jumps over the lazy dog<br>
+                <span style="font-size: 0.875rem; color: #71717a;">Variable: --font-geist-sans | Usage: Body text, UI, headings</span>
+            </p>
+        </div>
+
+        <h4>2. Geist Mono (Technical)</h4>
+        <div class="font-example" style="font-family: 'SF Mono', Monaco, monospace;">
+            <p style="color: #fafafa; margin: 0;">
+                The quick brown fox jumps over the lazy dog<br>
+                <span style="font-size: 0.875rem; color: #71717a;">Variable: --font-geist-mono | Usage: Code, labels, uppercase tracking text</span>
+            </p>
+        </div>
+
+        <h4>3. Font Serif (Accent)</h4>
+        <div class="font-example" style="font-family: Georgia, serif;">
+            <p style="color: #fafafa; margin: 0;">
+                The quick brown fox jumps over the lazy dog<br>
+                <span style="font-size: 0.875rem; color: #71717a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">Class: font-serif | Usage: Large hero headlines</span>
+            </p>
+        </div>
+
+        <h3>Type Scale</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Size</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>text-[8px]</code></td>
+                    <td>8px</td>
+                    <td>Micro labels, metadata</td>
+                </tr>
+                <tr>
+                    <td><code>text-[10px]</code></td>
+                    <td>10px</td>
+                    <td>Small labels, status badges</td>
+                </tr>
+                <tr>
+                    <td><code>text-[11px]</code></td>
+                    <td>11px</td>
+                    <td>Section labels with uppercase</td>
+                </tr>
+                <tr>
+                    <td><code>text-xs</code></td>
+                    <td>12px</td>
+                    <td>Small text, captions</td>
+                </tr>
+                <tr>
+                    <td><code>text-sm</code></td>
+                    <td>14px</td>
+                    <td>Buttons, form inputs, secondary text</td>
+                </tr>
+                <tr>
+                    <td><code>text-base</code></td>
+                    <td>16px</td>
+                    <td>Body text (default)</td>
+                </tr>
+                <tr>
+                    <td><code>text-lg</code></td>
+                    <td>18px</td>
+                    <td>Large body text, subtitles</td>
+                </tr>
+                <tr>
+                    <td><code>text-xl</code></td>
+                    <td>20px</td>
+                    <td>Section headings</td>
+                </tr>
+                <tr>
+                    <td><code>text-2xl</code></td>
+                    <td>24px</td>
+                    <td>Card headings</td>
+                </tr>
+                <tr>
+                    <td><code>text-5xl</code></td>
+                    <td>48px</td>
+                    <td>Hero headings (mobile)</td>
+                </tr>
+                <tr>
+                    <td><code>text-6xl</code></td>
+                    <td>60px</td>
+                    <td>Hero headings (tablet)</td>
+                </tr>
+                <tr>
+                    <td><code>text-7xl</code></td>
+                    <td>72px</td>
+                    <td>Hero headings (desktop)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Font Weights</h3>
+        <ul>
+            <li><code>font-light</code> (300) - Light emphasis</li>
+            <li><code>font-normal</code> (400) - Body text default</li>
+            <li><code>font-medium</code> (500) - Primary headings, emphasis</li>
+            <li><code>font-semibold</code> (600) - Navigation, footer branding</li>
+        </ul>
+
+        <h3>Text Styling Utilities</h3>
+        <ul>
+            <li><code>antialiased</code> - Applied globally for smooth rendering</li>
+            <li><code>tracking-tight</code> - Brand name, large headings</li>
+            <li><code>tracking-wide</code> - Hero subheadings</li>
+            <li><code>tracking-widest</code> - Small uppercase labels (often with font-mono)</li>
+            <li><code>uppercase</code> - Section labels</li>
+            <li><code>leading-relaxed</code> - Comfortable line height for paragraphs</li>
+        </ul>
+
+        <!-- COMPONENTS -->
+        <h2>Component Patterns</h2>
+
+        <h3>Buttons</h3>
+
+        <h4>Primary CTA Button</h4>
+        <div class="component-example">
+            <button style="
+                padding: 0.75rem 1.5rem;
+                font-size: 0.875rem;
+                font-weight: 500;
+                background: #f5f5f5;
+                color: #000;
+                border: none;
+                border-radius: 2px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            " onmouseover="this.style.background='#d4d4d4'" onmouseout="this.style.background='#f5f5f5'">
+                Get Access
+            </button>
+            <pre><code>className="px-6 py-3 text-sm font-medium bg-neutral-100 text-black
+         hover:bg-neutral-300 transition-colors rounded-sm"</code></pre>
+        </div>
+
+        <h4>Secondary Button</h4>
+        <div class="component-example">
+            <button style="
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+                font-weight: 500;
+                background: white;
+                color: #000;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            " onmouseover="this.style.background='#e4e4e7'" onmouseout="this.style.background='white'">
+                Sign In
+            </button>
+            <pre><code>className="px-4 py-2 text-sm font-medium bg-white text-black
+         hover:bg-zinc-200 transition-colors rounded"</code></pre>
+        </div>
+
+        <h4>Disabled State</h4>
+        <pre><code>disabled:opacity-50 disabled:cursor-not-allowed</code></pre>
+
+        <h3>Input Fields</h3>
+
+        <h4>Email Input with Glassmorphism</h4>
+        <div class="component-example">
+            <input
+                type="email"
+                placeholder="Enter your work email"
+                style="
+                    width: 100%;
+                    max-width: 400px;
+                    background: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    padding: 0.75rem 1.5rem;
+                    font-size: 0.875rem;
+                    color: white;
+                    border-radius: 2px;
+                    backdrop-filter: blur(8px);
+                "
+            />
+            <pre><code>className="bg-white/10 border-white/20 px-6 py-3 text-sm text-white
+         placeholder:text-zinc-300 focus:outline-none focus:border-white/40
+         transition-colors backdrop-blur-sm rounded-sm"</code></pre>
+        </div>
+
+        <h3>Status Badges</h3>
+
+        <div class="component-example">
+            <span class="badge" style="background: #27272a; color: #a1a1aa; font-size: 10px;">
+                INACTIVE
+            </span>
+            <span class="badge" style="background: rgba(251, 146, 60, 0.1); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.2); font-size: 10px;">
+                ACTIVE
+            </span>
+            <span class="badge" style="background: rgba(34, 197, 94, 0.1); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.2); font-size: 10px;">
+                LIVE
+            </span>
+
+            <pre><code>// Inactive
+className="text-[10px] bg-zinc-800 px-2 py-1 rounded text-zinc-400"
+
+// Active/Testing
+className="text-[10px] bg-orange-500/10 text-orange-400 border border-orange-500/20 px-2 py-1 rounded"
+
+// Live/Success
+className="text-[10px] bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-1 rounded"</code></pre>
+        </div>
+
+        <h3>Cards & Containers</h3>
+
+        <h4>Large Section Card</h4>
+        <pre><code>className="bg-zinc-900/30 border border-zinc-800 rounded-md overflow-hidden"</code></pre>
+
+        <h4>Modal Overlay</h4>
+        <pre><code>className="bg-zinc-900/90 backdrop-blur-xl border border-zinc-700 rounded-xl p-6 shadow-2xl"</code></pre>
+
+        <h4>Interactive Card</h4>
+        <pre><code>className="p-3 bg-zinc-800/50 rounded-lg border border-zinc-800"</code></pre>
+
+        <h3>Section Headers</h3>
+
+        <div class="component-example">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <div style="
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: #f97316;
+                    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+                "></div>
+                <span style="
+                    font-size: 11px;
+                    font-family: 'SF Mono', Monaco, monospace;
+                    text-transform: uppercase;
+                    letter-spacing: 0.15em;
+                    color: #71717a;
+                ">SECTION LABEL</span>
+            </div>
+
+            <pre><code>&lt;div className="flex items-center gap-2"&gt;
+  &lt;div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" /&gt;
+  &lt;span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500"&gt;
+    Section Label
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <h3>Status Indicators</h3>
+
+        <h4>Dot Indicators</h4>
+        <div class="component-example">
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: #06b6d4;"></div>
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #f97316; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;"></div>
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: #22c55e;"></div>
+            </div>
+
+            <pre><code>// Static dot
+&lt;div className="w-1.5 h-1.5 rounded-full bg-cyan-500" /&gt;
+
+// Pulsing dot
+&lt;div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" /&gt;
+
+// Ping animation (expanding ring)
+&lt;span className="relative flex h-3 w-3"&gt;
+  &lt;span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" /&gt;
+  &lt;span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" /&gt;
+&lt;/span&gt;</code></pre>
+        </div>
+
+        <h3>Accordion Components</h3>
+
+        <h4>Interactive Accordion Item</h4>
+        <p>Used for progressive disclosure with smooth height transitions and color-coded indicators.</p>
+        <pre><code>const [activeAccordion, setActiveAccordion] = useState('Monitor');
+
+&lt;div
+  className={`cursor-pointer transition-all duration-300 group
+    border-t border-zinc-800 p-6 -mt-px first:mt-0
+    ${activeAccordion === item.id ? 'bg-zinc-900/50 relative z-10' : 'hover:bg-zinc-900/30'}`}
+  onClick={() => setActiveAccordion(item.id)}
+  onMouseEnter={() => setActiveAccordion(item.id)}
+&gt;
+  &lt;div className="flex items-center gap-3 mb-2"&gt;
+    &lt;div className={`w-1.5 h-1.5 rounded-full transition-colors
+      ${activeAccordion === item.id ? 'bg-cyan-500' : 'bg-zinc-600'}`} /&gt;
+    &lt;h4 className="text-xl font-medium"&gt;{item.title}&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div className={`overflow-hidden transition-all duration-500 ease-in-out
+    ${activeAccordion === item.id ? 'h-24 opacity-100' : 'h-0 opacity-0'}`}&gt;
+    &lt;p className="text-zinc-400 leading-relaxed pl-4.5 text-sm pt-2"&gt;
+      {item.description}
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <h3>Overlay UI Components</h3>
+
+        <h4>Modal Overlay Card</h4>
+        <p>Glassmorphic overlay with backdrop blur for floating UI elements.</p>
+        <pre><code>className="w-full max-w-md mx-6 bg-zinc-900/90 backdrop-blur-xl
+         border border-zinc-700 rounded-xl p-6 shadow-2xl"</code></pre>
+
+        <h4>Channel Monitor Card</h4>
+        <pre><code>&lt;div className="flex items-center gap-3 p-3 bg-zinc-800/50 rounded-lg border border-zinc-800"&gt;
+  &lt;span className="text-zinc-500 text-lg"&gt;#&lt;/span&gt;
+  &lt;div className="flex-1"&gt;
+    &lt;div className="flex justify-between items-center mb-0.5"&gt;
+      &lt;span className="text-xs font-medium"&gt;support-tier-1&lt;/span&gt;
+      &lt;span className="text-[10px] text-zinc-500"&gt;Just now&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden"&gt;
+      &lt;div className="h-full w-3/4 bg-zinc-600 rounded-full" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <h4>Action Card with Confidence Score</h4>
+        <pre><code>&lt;div className="p-4 bg-zinc-800/50 rounded-lg border border-zinc-800 mb-3"&gt;
+  &lt;div className="flex gap-2 mb-2"&gt;
+    &lt;div className="w-2 h-2 rounded-full bg-zinc-600 mt-1" /&gt;
+    &lt;p className="text-xs text-zinc-300"&gt;
+      "I've processed the refund for Order #8821."
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div className="flex gap-2 pl-4"&gt;
+    &lt;span className="text-[10px] px-2 py-0.5 bg-green-500/10 text-green-400
+      rounded border border-green-500/20"&gt;Action: Stripe Refund&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div className="flex justify-between items-center px-1"&gt;
+  &lt;span className="text-[10px] text-zinc-500"&gt;Confidence Score&lt;/span&gt;
+  &lt;span className="text-[10px] font-mono text-green-400"&gt;98.5%&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+        <h3>Progress Bars & Loading States</h3>
+
+        <h4>Progress Bar</h4>
+        <pre><code>&lt;div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden"&gt;
+  &lt;div className="h-full w-3/4 bg-zinc-600 rounded-full" /&gt;
+&lt;/div&gt;</code></pre>
+
+        <h4>Icon with Background</h4>
+        <pre><code>// Cyan monitoring icon
+&lt;div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400"&gt;
+  &lt;svg className="w-4 h-4"&gt;...&lt;/svg&gt;
+&lt;/div&gt;
+
+// Green action icon
+&lt;div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-400"&gt;
+  &lt;svg className="w-4 h-4"&gt;...&lt;/svg&gt;
+&lt;/div&gt;
+
+// Yellow warning icon
+&lt;div className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-400"&gt;
+  &lt;svg className="w-4 h-4"&gt;...&lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+
+        <h3>Brand Logo Pattern</h3>
+        <pre><code>&lt;div className="flex items-center gap-2 font-semibold text-xl tracking-tight"&gt;
+  &lt;div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center"&gt;
+    &lt;div className="w-3 h-3 bg-white rounded-full" /&gt;
+  &lt;/div&gt;
+  WORKERS
+&lt;/div&gt;</code></pre>
+
+        <h3>Dividers & Separators</h3>
+        <pre><code>// Horizontal divider
+&lt;div className="h-px bg-zinc-700/50 my-2" /&gt;
+
+// Accent divider
+&lt;div className="w-24 h-1 bg-orange-500 mx-auto mb-8"&gt;&lt;/div&gt;
+
+// Border top separator
+border-t border-zinc-800
+border-t border-white/10</code></pre>
+
+        <!-- LAYOUT -->
+        <h2>Spacing & Layout</h2>
+
+        <h3>Container Patterns</h3>
+        <ul>
+            <li><code>container mx-auto px-6</code> - Standard page container</li>
+            <li><code>max-w-7xl mx-auto</code> - Footer constraint (1280px)</li>
+            <li><code>max-w-md</code> - Form width constraint (448px)</li>
+            <li><code>max-w-xl</code> - Content width constraint (576px)</li>
+        </ul>
+
+        <h3>Section Spacing</h3>
+        <ul>
+            <li><code>py-24</code> - Standard vertical section spacing (6rem top/bottom)</li>
+            <li><code>pb-40</code> - Extra bottom padding on some sections (10rem)</li>
+            <li><code>px-6 md:px-12</code> - Responsive horizontal padding</li>
+        </ul>
+
+        <h3>Grid Systems</h3>
+
+        <h4>12-Column Responsive Grid</h4>
+        <pre><code>className="grid grid-cols-1 lg:grid-cols-12 gap-8"
+
+// Asymmetric layouts
+lg:col-span-4  // 4 columns
+lg:col-span-8  // 8 columns</code></pre>
+
+        <h4>Feature Grid</h4>
+        <pre><code>className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"</code></pre>
+
+        <h4>Stats/Metrics Grid</h4>
+        <pre><code>className="grid grid-cols-2 gap-3"</code></pre>
+
+        <h3>Common Gaps</h3>
+        <ul>
+            <li><code>gap-2</code> (0.5rem) - Tight spacing</li>
+            <li><code>gap-3</code> (0.75rem) - Default card grids</li>
+            <li><code>gap-4</code> (1rem) - Standard spacing</li>
+            <li><code>gap-6</code> (1.5rem) - Comfortable spacing</li>
+            <li><code>gap-8</code> (2rem) - Large spacing</li>
+            <li><code>gap-px</code> (1px) - Hairline separators in grids</li>
+        </ul>
+
+        <h3>Minimum Heights</h3>
+        <ul>
+            <li><code>min-h-screen</code> - Full viewport height sections</li>
+            <li><code>min-h-[500px]</code> - Hero minimum height</li>
+            <li><code>min-h-[600px]</code>, <code>min-h-[700px]</code>, <code>min-h-[800px]</code> - Component constraints</li>
+        </ul>
+
+        <!-- VISUAL EFFECTS -->
+        <h2>Visual Effects</h2>
+
+        <h3>Animations</h3>
+
+        <h4>Built-in Tailwind Animations</h4>
+        <ul>
+            <li><code>animate-pulse</code> - Gentle pulsing for status indicators</li>
+            <li><code>animate-ping</code> - Expanding ring effect for notifications</li>
+        </ul>
+
+        <h4>Custom Transitions</h4>
+        <pre><code>// Fade in with slide up
+animate-in fade-in slide-in-from-bottom-4 duration-500
+
+// Scale on hover
+group-hover:scale-105 transition-transform duration-500
+
+// Color transitions
+transition-colors duration-300
+
+// All properties
+transition-all duration-300</code></pre>
+
+        <h3>Backdrop Effects</h3>
+        <ul>
+            <li><code>backdrop-blur-sm</code> - Subtle blur for input fields</li>
+            <li><code>backdrop-blur-md</code> - Medium blur for navbar when scrolled</li>
+            <li><code>backdrop-blur-xl</code> - Heavy blur for modal overlays</li>
+        </ul>
+
+        <h3>Gradients & Masks</h3>
+
+        <h4>Overlay Gradients</h4>
+        <pre><code>// Left to right fade
+bg-gradient-to-l from-transparent to-zinc-900/50
+
+// Right fade
+bg-gradient-to-r from-transparent to-zinc-900/80</code></pre>
+
+        <h4>Grid Pattern Background</h4>
+        <pre><code>className="bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),
+          linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
+          bg-[size:32px_32px]"</code></pre>
+
+        <h4>Radial Mask</h4>
+        <pre><code>className="[mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)]"</code></pre>
+
+        <h3>Shadows</h3>
+        <ul>
+            <li><code>shadow-2xl</code> - Deep shadows for elevated modals and overlays</li>
+        </ul>
+
+        <h3>Borders</h3>
+        <ul>
+            <li><code>border border-zinc-800</code> - Standard subtle border</li>
+            <li><code>border border-zinc-700</code> - Slightly more prominent border</li>
+            <li><code>border-white/10</code>, <code>border-white/20</code> - Glassmorphic borders</li>
+            <li><code>border border-green-500/20</code> - Status-colored borders (20% opacity)</li>
+        </ul>
+
+        <h3>Border Radius</h3>
+        <ul>
+            <li><code>rounded-sm</code> - Slight rounding for buttons/inputs (2px)</li>
+            <li><code>rounded</code> - Default rounding (4px)</li>
+            <li><code>rounded-md</code> - Medium rounding for sections (6px)</li>
+            <li><code>rounded-lg</code> - Large rounding for cards (8px)</li>
+            <li><code>rounded-xl</code> - Extra large for modals (12px)</li>
+            <li><code>rounded-2xl</code> - Very large for feature grids (16px)</li>
+            <li><code>rounded-full</code> - Perfect circles for dots and avatars</li>
+        </ul>
+
+        <h3>Opacity</h3>
+        <ul>
+            <li><code>opacity-50</code> - Disabled state (50%)</li>
+            <li><code>opacity-60</code> - Slightly muted (60%)</li>
+            <li><code>opacity-75</code> - Moderately visible (75%)</li>
+            <li><code>opacity-80</code> - Mostly visible (80%)</li>
+        </ul>
+
+        <!-- INTERACTION PATTERNS -->
+        <h2>Interaction Patterns</h2>
+
+        <h3>Hover States</h3>
+        <ul>
+            <li><code>hover:bg-neutral-300</code> - Button background change</li>
+            <li><code>hover:text-orange-500</code> - Link color change</li>
+            <li><code>hover:bg-zinc-900/30</code> - Subtle background on hover</li>
+            <li><code>group-hover:scale-105</code> - Scale child when parent is hovered</li>
+        </ul>
+
+        <h3>Focus States</h3>
+        <ul>
+            <li><code>focus:outline-none</code> - Remove default outline</li>
+            <li><code>focus:border-white/40</code> - Custom focus border for inputs</li>
+        </ul>
+
+        <h3>Active States</h3>
+        <pre><code>// Accordion active state
+{isActive && "bg-zinc-900/50 border-orange-500/20"}
+
+// Tab active state
+{isActive ? "text-white" : "text-zinc-500"}</code></pre>
+
+        <h3>Selection</h3>
+        <pre><code>selection:bg-orange-500 selection:text-white</code></pre>
+
+        <h3>Scroll Behavior</h3>
+        <pre><code>// In globals.css
+html {
+  scroll-behavior: smooth;
+}</code></pre>
+
+        <!-- DESIGN PATTERNS -->
+        <h2>Design Patterns</h2>
+
+        <h3>Full-Width Sections</h3>
+        <ul>
+            <li>Sections span full viewport width with <code>bg-black</code></li>
+            <li>Content constrained within <code>container mx-auto px-6</code></li>
+            <li>Vertical spacing with <code>py-24</code></li>
+        </ul>
+
+        <h3>Asymmetric Layouts</h3>
+        <p>Using 12-column grid for dynamic content distribution:</p>
+        <ul>
+            <li>4/8 column splits for text + visual content</li>
+            <li>8/4 column splits for emphasis on left side</li>
+            <li>2-column spans in feature grids (md:col-span-2)</li>
+        </ul>
+
+        <h3>Progressive Disclosure</h3>
+        <ul>
+            <li>Accordion components with smooth height transitions</li>
+            <li>Content reveals with fade-in animations</li>
+            <li>Hover states that show additional information</li>
+        </ul>
+
+        <h3>Glassmorphism</h3>
+        <p>Layering technique using transparency and blur:</p>
+        <pre><code>// Navigation when scrolled
+bg-black/40 backdrop-blur-md
+
+// Input fields
+bg-white/10 border-white/20 backdrop-blur-sm
+
+// Modal overlays
+bg-zinc-900/90 backdrop-blur-xl</code></pre>
+
+        <h3>Status Color Semantics</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Color</th>
+                    <th>Meaning</th>
+                    <th>Use Cases</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="badge" style="background: rgba(6, 182, 212, 0.1); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.2);">Cyan</span></td>
+                    <td>Monitoring</td>
+                    <td>Active monitoring, observation mode</td>
+                </tr>
+                <tr>
+                    <td><span class="badge" style="background: rgba(34, 197, 94, 0.1); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.2);">Green</span></td>
+                    <td>Success</td>
+                    <td>Completed actions, live status, confirmations</td>
+                </tr>
+                <tr>
+                    <td><span class="badge" style="background: rgba(234, 179, 8, 0.1); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.2);">Yellow</span></td>
+                    <td>Warning</td>
+                    <td>Escalations, simulation mode, caution</td>
+                </tr>
+                <tr>
+                    <td><span class="badge" style="background: rgba(251, 146, 60, 0.1); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.2);">Orange</span></td>
+                    <td>Indicators/Highlights</td>
+                    <td>Pulse dots, section markers, subtle highlights (NOT CTAs)</td>
+                </tr>
+                <tr>
+                    <td><span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.2);">Red</span></td>
+                    <td>Error</td>
+                    <td>Errors, critical alerts, failures</td>
+                </tr>
+                <tr>
+                    <td><span class="badge" style="background: rgba(16, 185, 129, 0.1); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.2);">Emerald</span></td>
+                    <td>Improvement</td>
+                    <td>Positive changes, optimizations</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- IMPLEMENTATION NOTES -->
+        <h2>Implementation Notes</h2>
+
+        <h3>Tailwind CSS v4 Configuration</h3>
+        <pre><code>// postcss.config.mjs
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+
+// globals.css
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}</code></pre>
+
+        <h3>Font Loading (Next.js)</h3>
+        <pre><code>// layout.tsx
+import { Geist, Geist_Mono } from "next/font/google";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+// Applied to body
+className={`${geistSans.variable} ${geistMono.variable} antialiased`}</code></pre>
+
+        <h3>Responsive Design</h3>
+        <p>Mobile-first approach with breakpoints:</p>
+        <ul>
+            <li><code>sm:</code> - 640px and up</li>
+            <li><code>md:</code> - 768px and up (tablets)</li>
+            <li><code>lg:</code> - 1024px and up (desktops)</li>
+        </ul>
+        <p>Example: <code>text-6xl md:text-7xl lg:text-7xl</code></p>
+
+        <h3>Dark Mode</h3>
+        <p>The design is dark-mode first. Light mode variables are defined but dark mode is the primary aesthetic:</p>
+        <pre><code>@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}</code></pre>
+
+        <h3>Best Practices</h3>
+        <ul>
+            <li>Use semantic color names (orange for CTA, green for success)</li>
+            <li>Maintain consistent spacing with gap-* utilities</li>
+            <li>Apply <code>transition-colors</code> or <code>transition-all</code> for smooth interactions</li>
+            <li>Use backdrop-blur with semi-transparent backgrounds for depth</li>
+            <li>Keep animations subtle and purposeful</li>
+            <li>Leverage the zinc scale for all grayscale needs</li>
+            <li>Use <code>rounded-sm</code> for interactive elements (buttons, inputs)</li>
+            <li>Use <code>rounded-lg</code> or higher for container elements</li>
+        </ul>
+
+        <!-- FOOTER -->
+        <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #27272a;">
+            <p style="color: #71717a; font-size: 0.875rem;">
+                Workers Landing Page Design System<br>
+                Generated: 2025-12-08<br>
+                Framework: Next.js + Tailwind CSS v4
+            </p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</body>
+</html>
