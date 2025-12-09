@@ -155,7 +155,7 @@ export function Onboarding() {
               <div className="lg:col-span-4 flex flex-col justify-between h-full min-h-[700px] order-1 lg:order-2">
                 <div className="p-12">
                   <div className="flex items-center gap-2 mb-6">
-                    <h3 className="text-2xl font-medium">Go Live in a week</h3>
+                    <h3 className="text-2xl font-medium">Go live in a week</h3>
                   </div>
                   <p className="text-zinc-400 mb-8 leading-relaxed">
                     Bypass months of engineering. Our builder empowers all teams to instantly transform existing documentation into fully active agents.
@@ -168,7 +168,7 @@ export function Onboarding() {
                       id: 'Step 1',
                       time: 'Day 1-2',
                       title: 'Upload & Configure',
-                      description: 'Autogenerate policies for agents by uploading documents and API specs. Ask Orion (our built-in co-pilot) to fine-tune exisint agent policies.',
+                      description: 'Autogenerate policies for agents by uploading documents and API specs. Ask Orion (our built-in co-pilot) to fine-tune existing agent policies.',
                       color: 'bg-cyan-500'
                     },
                     {
