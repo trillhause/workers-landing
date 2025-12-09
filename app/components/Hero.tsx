@@ -90,7 +90,7 @@ export function Hero() {
   return (
     <section className="relative h-screen max-h-[1000px] min-h-[500px] flex flex-col items-center justify-center overflow-hidden">
         <div 
-          data-us-project="1UHol0qux6eRRFfBMDIi" 
+          data-us-project="XRAZIAJFVsYmUeEn8fYK" 
           className="absolute inset-0 z-0"
         />
         <div className="relative z-10 container mx-auto px-6 flex flex-col items-start justify-center">
