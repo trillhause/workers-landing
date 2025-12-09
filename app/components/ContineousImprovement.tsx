@@ -134,7 +134,7 @@ export function ContineousImprovement() {
                     <h3 className="text-2xl font-medium">Improve as you go</h3>
                   </div>
                   <p className="text-zinc-400 mb-8 leading-relaxed">
-                    Get periodic reports on the agent’s performance. Use in-built monitoring platform to replay interactions, audit suboptimal trajectories, and refine existing policies.
+                    Get periodic reports on the agent’s performance. Use the built-in monitoring platform to replay interactions, audit suboptimal trajectories, and refine existing policies.
                   </p>
                 </div>
                 
