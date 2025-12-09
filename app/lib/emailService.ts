@@ -16,11 +16,14 @@ export async function sendConfirmationEmail({
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
     const confirmationLink = `${baseUrl}/api/confirm?token=${confirmationToken}`;
 
+    console.log( 'Sending confirmation email to:', email );
+    console.log( 'Confirmation link:', confirmationLink );
+
     const { data, error } = await resend.emails.send({
       from: 'Millin @ Workers <millin@slackworkers.com>', // Replace with your verified domain in production
       to: [email],
       template: {
-        id: 'confirmation-email',
+        id: 'email-confirmation',
         variables: {
           confirmationLink: confirmationLink,
         },
