@@ -46,8 +46,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-500">
         <p>© {new Date().getFullYear()} Workers Inc. All rights reserved.</p>
         <div className="flex gap-6">
-            <a href="https://x.com/slack_agents" target="_blank" className="hover:text-white transition-colors">Twitter</a>
-            <a href="https://www.linkedin.com/company/slack-workers/?viewAsMember=true" target="_blank" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://x.com/slack_agents" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a>
+            <a href="https://www.linkedin.com/company/slack-workers/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
         </div>
       </div>
     </footer>
