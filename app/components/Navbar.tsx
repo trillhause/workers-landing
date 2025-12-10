@@ -58,17 +58,15 @@ export function Navbar({ hideActions }: NavbarProps) {
       </Link>
 
       {!hideActions && (
-        <div className={`flex items-center gap-4 px-2 py-2 rounded-lg transition-colors duration-300 ${navBgClass}`}>
+        <div className={`flex items-center gap-4 px-2 py-2 rounded-lg transition-all duration-500 bg-black/40 backdrop-blur-md ${
+          scrolledPastHero ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8 pointer-events-none'
+        }`}>
           {/* <button className="px-4 py-2 text-sm font-medium">
             Sign In
           </button> */}
           <button
             onClick={() => window.location.href = '#get-access'}
-            className={`px-4 py-2 text-sm font-medium bg-neutral-100 text-black hover:bg-neutral-300 rounded-sm transition-all duration-500 ${
-              scrolledPastHero
-                ? 'opacity-100 translate-x-0'
-                : 'opacity-0 -translate-x-8 pointer-events-none'
-            }`}
+            className={`px-4 py-2 text-sm font-medium bg-neutral-100 text-black hover:bg-neutral-300 rounded-sm`}
           >
             Get Access
           </button>
