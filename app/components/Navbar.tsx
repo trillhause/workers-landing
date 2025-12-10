@@ -7,6 +7,7 @@ interface NavbarProps {
 
 export function Navbar({ hideActions }: NavbarProps) {
   const [scrolled, setScrolled] = React.useState(false);
+  const [scrolledPastHero, setScrolledPastHero] = React.useState(false);
 
   React.useEffect(() => {
     function handleScroll() {
@@ -15,6 +16,15 @@ export function Navbar({ hideActions }: NavbarProps) {
         setScrolled(true);
       } else {
         setScrolled(false);
+      }
+
+      // Detect if scrolled past hero section
+      // Hero has min-h-[500px] and max-h-[1000px], use 80vh as threshold
+      const heroHeight = Math.min(window.innerHeight * 0.8, 1000);
+      if (window.scrollY > heroHeight) {
+        setScrolledPastHero(true);
+      } else {
+        setScrolledPastHero(false);
       }
     }
 
@@ -52,7 +62,14 @@ export function Navbar({ hideActions }: NavbarProps) {
           {/* <button className="px-4 py-2 text-sm font-medium">
             Sign In
           </button> */}
-          <button onClick={() => window.location.href = '#get-access'} className="px-4 py-2 text-sm font-medium bg-neutral-100 text-black hover:bg-neutral-300 transition-colors rounded-sm">
+          <button
+            onClick={() => window.location.href = '#get-access'}
+            className={`px-4 py-2 text-sm font-medium bg-neutral-100 text-black hover:bg-neutral-300 rounded-sm transition-all duration-500 ${
+              scrolledPastHero
+                ? 'opacity-100 translate-x-0'
+                : 'opacity-0 -translate-x-8 pointer-events-none'
+            }`}
+          >
             Get Access
           </button>
         </div>
