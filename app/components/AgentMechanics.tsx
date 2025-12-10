@@ -18,7 +18,7 @@ export function AgentMechanics() {
             // onMouseLeave={() => setActiveAccordion(null)}
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-              <div className="lg:col-span-4 flex flex-col justify-between h-full min-h-[700px]">
+              <div className="lg:col-span-4 flex flex-col justify-between h-full lg:min-h-[650px]">
                 <div className="p-12">
                   <div className="flex items-center gap-2 mb-6">
                     <h3 className="text-2xl font-medium">Make Slack AI Native</h3>
@@ -69,7 +69,9 @@ export function AgentMechanics() {
                 </div>
               </div>
                   
-                <div className="lg:col-span-8 relative min-h-[800px] lg:min-h-[600px]">
+                <div
+                  className="lg:col-span-8 relative order-2 lg:order-1 [aspect-ratio:4/3] lg:[aspect-ratio:auto] lg:h-full lg:min-h-[600px]"
+                >
                 <Image
                   src="/images/mechanics.png"
                   alt="Smart Insights"

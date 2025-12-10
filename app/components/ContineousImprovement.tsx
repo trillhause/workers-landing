@@ -17,7 +17,9 @@ export function ContineousImprovement() {
             className="bg-zinc-900/30 border border-zinc-800 rounded-md overflow-hidden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-              <div className="lg:col-span-8 relative min-h-[800px] lg:min-h-[600px] order-2 lg:order-1">
+              <div
+                className="lg:col-span-8 relative order-2 lg:order-1 [aspect-ratio:4/3] lg:[aspect-ratio:auto] lg:h-full lg:min-h-[700px]"
+              >
                 <Image
                   src="/images/optimization.png"
                   alt="Continuous Improvement"
@@ -128,7 +130,7 @@ export function ContineousImprovement() {
                 </div>
               </div>
               
-              <div className="lg:col-span-4 flex flex-col justify-between h-full min-h-[700px] order-1 lg:order-2">
+              <div className="lg:col-span-4 flex flex-col justify-between h-full order-1 lg:order-2 lg:min-h-[700px]">
                 <div className="p-12">
                   <div className="flex items-center gap-2 mb-6">
                     <h3 className="text-2xl font-medium">Improve as you go</h3>
