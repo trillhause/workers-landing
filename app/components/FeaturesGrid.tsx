@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import posthog from 'posthog-js';
 
 export function FeaturesGrid() {
   return (

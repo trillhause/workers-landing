@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import posthog from 'posthog-js';
 
 export function AgentMechanics() {
   const [activeAccordion, setActiveAccordion] = useState<string>('Monitor');
@@ -52,7 +53,13 @@ export function AgentMechanics() {
                     <div 
                       key={item.id} 
                       className={`cursor-pointer transition-all duration-300 group border-t border-zinc-800 p-6 -mt-px first:mt-0 ${activeAccordion === item.id ? 'bg-zinc-900/50 relative z-10' : 'hover:bg-zinc-900/30'}`}
-                      onClick={() => setActiveAccordion(item.id)}
+                      onClick={() => {
+                        setActiveAccordion(item.id);
+                        posthog.capture('agent_mechanic_accordion_clicked', {
+                          id: item.id,
+                          title: item.title
+                        });
+                      }}
                       onMouseEnter={() => setActiveAccordion(item.id)}
                     >
                       <div className="flex items-center gap-3 mb-2">

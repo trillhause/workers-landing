@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import posthog from 'posthog-js';
 
 export function ContineousImprovement() {
   const [activeStep, setActiveStep] = useState<string>("Reports");
@@ -121,7 +122,10 @@ export function ContineousImprovement() {
                               <span className="text-[10px] text-zinc-500">High Confidence</span>
                            </div>
                         </div>
-                        <button className="w-full py-2 bg-white text-black text-xs font-medium rounded transition-colors">
+                        <button
+                          className="w-full py-2 bg-white text-black text-xs font-medium rounded transition-colors"
+                          onClick={() => posthog.capture('improvement_update_clicked', { activeStep: activeStep })}
+                        >
                           Apply Update
                         </button>
                       </div>
@@ -164,7 +168,10 @@ export function ContineousImprovement() {
                     <div 
                       key={item.id} 
                       className={`cursor-pointer transition-all duration-300 group border-t border-zinc-800 p-6 -mt-px first:mt-0 ${activeStep === item.id ? 'bg-zinc-900/50 relative z-10' : 'hover:bg-zinc-900/30'}`}
-                      onClick={() => setActiveStep(item.id)}
+                      onClick={() => {
+                        setActiveStep(item.id);
+                        posthog.capture('optimization_step_selected', { id: item.id, title: item.title });
+                      }}
                       onMouseEnter={() => setActiveStep(item.id)}
                     >
                       <div className="flex items-center gap-3 mb-2">

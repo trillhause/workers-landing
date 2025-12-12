@@ -3,6 +3,7 @@
 import React from 'react';
 import type { WaitlistResponse } from '@/app/types/waitlist';
 import { LetterUnread, DangerTriangle } from '@solar-icons/react';
+import posthog from 'posthog-js';
 
 export function Hero() {
   const [email, setEmail] = React.useState('');
@@ -36,6 +37,10 @@ export function Hero() {
     e.preventDefault();
     setLoading(true);
     setMessage('');
+    posthog.capture('waitlist_button_clicked', {
+      email: email,
+      area: 'hero',
+    });
 
     // Basic frontend validation
     if (!email) {
@@ -64,24 +69,46 @@ export function Hero() {
       const data: WaitlistResponse = await response.json();
 
       if (data.success) {
+        let submissionType = null;
         if (data.requiresWorkEmail) {
           setMessageType('warning');
           setMessage(data.message || 'Please use your work email address.');
+          submissionType = 'personal_email_signup';
         } else if (data.alreadyExists) {
           setMessageType('success');
           setMessage(data.message || "You're already on our waitlist!");
+          submissionType = 'existing_signup';
         } else {
           setMessageType('success');
           setMessage(data.message || 'Check your email for a confirmation link!');
           setEmail(''); // Clear input on success
+          submissionType = 'work_email_signup'
         }
+        posthog.capture('waitlist_form_submitted', {
+          success: true,
+          submissionType: submissionType,
+          message: data.message,
+          area: 'hero',
+        });
       } else {
         setMessageType('error');
         setMessage(data.error || 'Something went wrong. Please try again.');
+        posthog.capture('waitlist_form_failed', {
+          success: false,
+          reason: 'api_error',
+          message: data.error,
+          area: 'final-cta',
+        });
       }
     } catch (error) {
       setMessageType('error');
       setMessage('Network error. Please check your connection and try again.');
+      posthog.capture('waitlist_form_failed', {
+        success: false,
+        reason: 'network_error',
+        message: 'Network error. Please check your connection and try again.',
+        area: 'final-cta',
+      });
     } finally {
       setLoading(false);
     }

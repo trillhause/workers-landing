@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import posthog from 'posthog-js';
 
 export function Onboarding() {
   const [activeGoLiveStep, setActiveGoLiveStep] = useState<string>("Step 1");
@@ -144,7 +145,10 @@ export function Onboarding() {
                               <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Avg Response</div>
                            </div>
                         </div>
-                        <button className="w-full py-2 bg-white text-black text-xs font-medium rounded hover:bg-zinc-200 transition-colors">
+                        <button
+                          className="w-full py-2 bg-white text-black text-xs font-medium rounded hover:bg-zinc-200 transition-colors"
+                          onClick={() => posthog.capture('onboarding_view_dashboard_clicked')}
+                        >
                            View Dashboard
                         </button>
                       </div>
@@ -191,7 +195,13 @@ export function Onboarding() {
                     <div 
                       key={item.id} 
                       className={`cursor-pointer transition-all duration-300 group border-t border-zinc-800 p-6 -mt-px first:mt-0 ${activeGoLiveStep === item.id ? 'bg-zinc-900/50 relative z-10' : 'hover:bg-zinc-900/30'}`}
-                      onClick={() => setActiveGoLiveStep(item.id)}
+                      onClick={() => {
+                        setActiveGoLiveStep(item.id);
+                        posthog.capture('onboarding_step_selected', {
+                          id: item.id,
+                          title: item.title
+                        });
+                      }}
                       onMouseEnter={() => setActiveGoLiveStep(item.id)}
                     >
                       <div className="flex items-center gap-3 mb-2">

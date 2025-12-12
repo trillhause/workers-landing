@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
+import posthog from 'posthog-js';
 
 export default function ConfirmedPage() {
   React.useEffect(() => {
@@ -52,6 +53,7 @@ export default function ConfirmedPage() {
            <div className="flex flex-col sm:flex-row gap-4">
             <Link
                 href="/"
+                onClick={() => posthog.capture('confirmation_return_to_homepage_clicked', { target_url: '/' })}
                 className="w-full sm:w-auto px-6 py-3 text-sm font-medium bg-neutral-100 text-black hover:bg-neutral-300 transition-colors whitespace-nowrap rounded-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Return to Homepage

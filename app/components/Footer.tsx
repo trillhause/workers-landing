@@ -1,7 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
+import posthog from 'posthog-js';
 
 export function Footer() {
+  const handleLinkClick = (linkText: string, linkUrl: string) => {
+    posthog.capture('footer-link-clicked', {
+      link_text: linkText,
+      link_url: linkUrl,
+    });
+  };
+
   return (
     <footer className="bg-black text-white py-20 px-6 md:px-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
@@ -26,18 +34,18 @@ export function Footer() {
         <div>
           <h3 className="font-semibold mb-6 text-white">Product</h3>
           <ul className="space-y-3 text-sm text-neutral-400">
-            <li><Link href="/#mechanics" className="hover:text-white transition-colors">Mechanics</Link></li>
-            <li><Link href="/#onboarding" className="hover:text-white transition-colors">Onboarding</Link></li>
-            <li><Link href="/#testing" className="hover:text-white transition-colors">Testing</Link></li>
-            <li><Link href="/#optimization" className="hover:text-white transition-colors">Optimization</Link></li>
+            <li><Link href="/#mechanics" onClick={() => handleLinkClick('Mechanics', '/#mechanics')} className="hover:text-white transition-colors">Mechanics</Link></li>
+            <li><Link href="/#onboarding" onClick={() => handleLinkClick('Onboarding', '/#onboarding')} className="hover:text-white transition-colors">Onboarding</Link></li>
+            <li><Link href="/#testing" onClick={() => handleLinkClick('Testing', '/#testing')} className="hover:text-white transition-colors">Testing</Link></li>
+            <li><Link href="/#optimization" onClick={() => handleLinkClick('Optimization', '/#optimization')} className="hover:text-white transition-colors">Optimization</Link></li>
           </ul>
         </div>
 
         <div>
           <h3 className="font-semibold mb-6 text-white">Legal</h3>
           <ul className="space-y-3 text-sm text-neutral-400">
-            <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-            <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
+            <li><Link href="/privacy" onClick={() => handleLinkClick('Privacy Policy', '/privacy')} className="hover:text-white transition-colors">Privacy Policy</Link></li>
+            <li><Link href="/terms" onClick={() => handleLinkClick('Terms of Service', '/terms')} className="hover:text-white transition-colors">Terms of Service</Link></li>
             {/* <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li> */}
           </ul>
         </div>
@@ -46,8 +54,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-neutral-500">
         <p>© {new Date().getFullYear()} Workers Inc. All rights reserved.</p>
         <div className="flex gap-6">
-            <a href="https://x.com/slack_agents" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a>
-            <a href="https://www.linkedin.com/company/slack-workers/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://x.com/slack_agents" onClick={() => handleLinkClick('Twitter', 'https://x.com/slack_agents')} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a>
+            <a href="https://www.linkedin.com/company/slack-workers/?viewAsMember=true" onClick={() => handleLinkClick('LinkedIn', 'https://www.linkedin.com/company/slack-workers/?viewAsMember=true')} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
         </div>
       </div>
     </footer>

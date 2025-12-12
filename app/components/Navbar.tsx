@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import posthog from 'posthog-js';
 
 interface NavbarProps {
   hideActions?: boolean;
@@ -43,7 +44,7 @@ export function Navbar({ hideActions }: NavbarProps) {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 md:px-12 md:py-6 flex items-center justify-between">
-      <Link href="/" passHref>
+      <Link href="/" passHref onClick={() => posthog.capture('navbar_logo_clicked', { target: '/' })}>
         <div
           className={`flex items-center gap-8 px-6 py-3 rounded-md transition-colors duration-300 ${navBgClass}`}
           style={{ cursor: 'pointer' }}
@@ -65,7 +66,10 @@ export function Navbar({ hideActions }: NavbarProps) {
             Sign In
           </button> */}
           <button
-            onClick={() => window.location.href = '#get-access'}
+            onClick={() => {
+              posthog.capture('navbar_get_access_clicked', { target: '#get-access' });
+              window.location.href = '#get-access';
+            }}
             className={`px-4 py-2 text-sm font-medium bg-neutral-100 text-black hover:bg-neutral-300 rounded-sm`}
           >
             Get Access
