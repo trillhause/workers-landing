@@ -13,20 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Slack Agents",
-  description: "Let agents handle your distractions. Get your time back. Enter Flow State.",
+  title: "Workers",
+  description: "Autonomous Agents that work with you and your team directly in Slack.",
   openGraph: {
-    title: 'Autonomous Agents in Slack',
-    description: 'Let agents handle your distractions. Get your time back. Enter Flow State.',
-    url: 'https://slackworkers.com', // Replace with your actual URL
-    siteName: 'Slack Workers',
+    title: 'Workers',
+    description: 'Autonomous Agents that work with you and your team directly in Slack.',
+    url: 'https://tagworkers.com', // Replace with your actual URL
+    siteName: 'Workers',
     images: [
       {
         // Use a high-quality, square or 1.91:1 image, ideally 1200x630px
-        url: '/images/og-image.png', // The path to your social media preview image in the 'public' folder
+        url: '/images/og-image-2.png', // The path to your social media preview image in the 'public' folder
         width: 728,
         height: 408,
-        alt: 'Slack Workers Preview Image',
+        alt: 'Workers | Autonomous Agents in Slack [Image]',
       },
     ],
     locale: 'en_US',

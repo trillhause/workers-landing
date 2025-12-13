@@ -20,7 +20,7 @@ export async function sendConfirmationEmail({
     console.log( 'Confirmation link:', confirmationLink );
 
     const { data, error } = await resend.emails.send({
-      from: 'Millin @ Workers <millin@slackworkers.com>', // Replace with your verified domain in production
+      from: 'Millin @ Workers <millin@tagworkers.com>', // Replace with your verified domain in production
       to: [email],
       template: {
         id: 'email-confirmation',

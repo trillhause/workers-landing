@@ -81,7 +81,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl mb-4 font-medium text-white">8. Contact Us</h2>
             <p>
-              If you have any questions about these Terms, please contact us at support@slackworkers.com.
+              If you have any questions about these Terms, please contact us at support@tagworkers.com.
             </p>
           </section>
         </div>

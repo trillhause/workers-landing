@@ -89,7 +89,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl mb-4 font-medium text-white">8. Contact Us</h2>
             <p>
-              If you have any questions about this Privacy Policy, please contact us at privacy@slackworkers.com.
+              If you have any questions about this Privacy Policy, please contact us at privacy@tagworkers.com.
             </p>
           </section>
         </div>
