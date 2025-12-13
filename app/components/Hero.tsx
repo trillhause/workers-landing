@@ -41,6 +41,7 @@ export function Hero() {
       email: email,
       area: 'hero',
     });
+    posthog.identify(email);
 
     // Basic frontend validation
     if (!email) {
